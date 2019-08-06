@@ -11,7 +11,7 @@ Small app for learning purpose. Stack:
   8. axios,
   9. uuid
 2. Back: 
-  1. node,
+* 1. node,
   2. express, 
   3. mongoDB,
   4. express-validator
