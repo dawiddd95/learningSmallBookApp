@@ -1,7 +1,3 @@
-// small app for learning purpose. Stack: 
-// Front: react, react router, redux, formik 
-// Back: express, mongoDB
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import RootRoutes from './pages/RootRoutes';

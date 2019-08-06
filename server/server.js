@@ -7,7 +7,6 @@ const cookieSession = require('cookie-session');
 
 const config = require('./config');
 
-// zaimportowane pliki routów
 const booksRouter = require('./routes/books');
 
 
@@ -22,7 +21,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// Używanie tych routów
 app.use(booksRouter);
 
 const port = process.env.PORT || 5000;

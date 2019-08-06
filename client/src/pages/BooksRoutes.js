@@ -8,8 +8,9 @@ import ErrorPage from '../components/ErrorPage/ErrorPage';
 const BooksRoutes = () => {
    return (  
       <Switch>
-         <Route exact path='/books' component={BooksContainer} /> 
+         <Route exact path='/books' render={(props) => <BooksContainer {...props } showAll={true} />} /> 
          <Route exact path='/books/add' component={AddBookFormContainer} />
+         <Route exact path='/books/:id' render={(props) => <BooksContainer {...props } showAll={false} />} />
          <Route component={ErrorPage} />
       </Switch>
    );

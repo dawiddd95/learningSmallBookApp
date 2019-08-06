@@ -4,13 +4,17 @@ import {Link} from 'react-router-dom';
 
 import actions from '../../duck/actions';
 import BooksList from '../../../../components/BooksList/BooksList';
+import CurrentBookDetails from '../CurrentBookDetails/CurrentBookDetails';
 
-const BooksContainer = () => {
-   // Pobieranie ksiazek z API i wrzucanie do reduxowego stnau
+const BooksContainer = ({showAll, match}) => {
    const dispatch = useDispatch();
    const books = useSelector(state => state.booksReducer)
+   const showBooks = showAll ? (
+      <BooksList books={books.list} />
+   ) : ( 
+      <CurrentBookDetails books={books.list} match={match.params.id} />
+   )
 
-   // Fetchowanie funka
    useEffect(() => {
       dispatch(actions.fetchBooksAction())
    }, [])
@@ -18,9 +22,7 @@ const BooksContainer = () => {
    return (  
       <div>
          <h1>Your Collection</h1>
-         <BooksList 
-            books={books.list} 
-         />
+         {showBooks}
          <Link to='/books/add'>
             Dodaj Do Kolekcji
          </Link>

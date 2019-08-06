@@ -4,8 +4,6 @@ const addBookAction = item => ({
    type: actionTypes.ADD_BOOK, item
 })
 
-
-// Akcja thunk
 const fetchBooksAction = () => (dispatch) => {
    fetch('/api/books')
       .then(res => res.json())
