@@ -1,7 +1,7 @@
 # learningSmallBookApp
 Small app for learning purpose. Stack: 
 1. Front: 
-..1. react, 
+* 1. react, 
   2. redux, 
   3. redux-thunk, 
   4. react-router,
